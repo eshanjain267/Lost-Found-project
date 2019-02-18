@@ -1,0 +1,135 @@
+<html>
+<head>
+    <title>
+    web cam access
+    </title>
+    
+    
+    <link rel="stylesheet" type="text/css" href="card.css">
+    </head>
+
+<body>
+    
+    
+      <div class="blog-card">
+    <div class="meta">
+      <div class="photo" id="results" ></div>
+      <ul class="details">
+        <li class="author"><a href="#">John Doe</a></li>
+        <li class="date">Aug. 24, 2015</li>
+        <li class="tags">
+          <ul>
+            <li><a href="#">Learn</a></li>
+            <li><a href="#">Code</a></li>
+            <li><a href="#">HTML</a></li>
+            <li><a href="#">CSS</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="description">
+        <form>
+      <h1> NAME: 
+	<span class="input">
+		<input type="text" placeholder="Write Here...">
+		<span></span>	
+</span>  
+</h1>
+      <h2>Place of Missing <span class="input">
+		<input type="text" placeholder="Write Here...">
+		<span></span>	
+</span>  </h2>
+               
+      <p> 
+           Category:
+          <select name="cat" size="1"> 
+  <option value="G&A">Gadets & Accessories</option>
+  <option value="saab">Study Material</option>
+  <option value="fiat">Ornaments</option>
+ <option value="audi">Money Material</option>
+<option value="audi">Personal Care</option>
+ <option value="audi">Personal Documents</option>
+</select>
+ <p> Description 
+     
+<textarea name="Text1" placeholder="write here" cols="40" rows="2"></textarea>
+		
+          
+</p>
+     
+            </form>
+    </div>
+  </div>
+  <div class="blog-card alt">
+    <div class="meta">
+      <div class="photo" style="background-image: url(https://storage.googleapis.com/chydlx/codepen/blog-cards/image-2.jpg)"></div>
+      <ul class="details">
+        <li class="author"><a href="#">Jane Doe</a></li>
+        <li class="date">July. 15, 2015</li>
+        <li class="tags">
+          <ul>
+            <li><a href="#">Learn</a></li>
+            <li><a href="#">Code</a></li>
+            <li><a href="#">JavaScript</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="description">
+      <h1>Mastering the Language</h1>
+      <h2>Java is not the same as JavaScript</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! Neque ad aliquam facilis numquam. Veritatis, sit.</p>
+     
+    </div>
+  </div>
+    
+    
+    
+    
+    
+    
+<style>
+#my_camera{
+ width: 320px;
+ height: 240px;
+ border: 1px solid black;
+}
+</style>
+
+<div id="my_camera"></div>
+<input type=button value="Take Snapshot" onClick="take_snapshot()">
+ 
+//<div id="results" ></div>
+ 
+<!-- Webcam.min.js -->
+<script type="text/javascript" src="webcam.min.js"></script>
+
+<!-- Configure a few settings and attach camera -->
+<script language="JavaScript">
+ Webcam.set({
+  width: 320,
+  height: 240,
+  image_format: 'jpeg',
+  jpeg_quality: 100
+ });
+ Webcam.attach( '#results' );
+
+<!-- Code to handle taking the snapshot and displaying it locally -->
+function take_snapshot() {
+ 
+ // take snapshot and get image data
+ Webcam.snap( function(data_uri) {
+  // display results in page
+  document.getElementById('results').innerHTML = 
+  '<img src="'+data_uri+'"/>';
+  } );
+    
+}
+</script>
+
+    
+    
+    </body>
+
+
+</html>
